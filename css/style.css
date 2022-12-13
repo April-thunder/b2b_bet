@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Raleway";
   font-style: normal;
@@ -360,8 +361,80 @@ body {
   justify-content: space-between;
 }
 
-.input_range {
-  margin-top: 30px;
+.range_text_block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  font-weight: 400;
+  font-size: 18px;
+  margin-bottom: 17px;
+}
+
+.range {
+  width: 755px;
+}
+
+.noUi-target {
+  border: 1px solid #fff !important;
+  background-color: #bdbdc0 !important;
+}
+
+.range-input {
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  width: 33px;
+  font-weight: 400;
+  font-size: 18px;
+  text-align: end;
+}
+
+/* прячем стрелки у инпута */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+#range-slider {
+  height: 10px;
+}
+
+#range-slider .noUi-connect {
+  background: #bdbdc0;
+}
+
+.noUi-base,
+.range,
+.noUi-target,
+.noUi-ltr,
+.noUi-horizontal,
+.noUi-txt-dir-ltr,
+.noUi-connects {
+  height: 7px !important;
+}
+
+#range-slider .noUi-handle {
+  height: 26px;
+  width: 26px;
+  top: -10px;
+  right: -9px; /* half the width */
+  border: 3px solid #286690;
+  border-radius: 13px;
+  background: #42A9ED;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.noUi-handle::after, .noUi-handle::before {
+  width: 0 !important;
 }
 
 .input_file input[type=file] {
