@@ -73,7 +73,7 @@
           </div>
         </div>
         <div class="form_wrapper">
-          <form class="form" action="" method="post">
+          <form class="form" action="#" method="post">
             <div class="form-up">
               <!-- Выпадающий список с помощью Choices.js -->
               <select class="select" name="select" id="select">
@@ -93,16 +93,19 @@
                 <div class="range_text_block">
                   <p class="range_text">Sed ut perspiciatis, unde omnis iste natus</p>
                   <div class="range_value_block">
-                    <input type="number" class="range-input" id="input-id">
+                    <!-- Данный инпут связан с положением ползунка -->
+                    <input type="number" name="number" class="range-input" id="input-id">
                     <span class="range-input__percent">%</span>
                   </div>
                 </div>
+                <!-- Передвигаемый ползунок сделан с помощью noUiSlider.js -->
                 <div class="range" id="range-slider">
-                  <label for="" class="range-label"></label>
+                  <label class="range-label"></label>
                 </div>
+                <!-- Конец слайдера noUiSlider.js -->
               </div>
               <label class="input input_file">
-                <input type="file">
+                <input type="file" name="file">
                 <span class="input_file-text">Прикрепить файл</span>
               </label>
             </div>
@@ -131,6 +134,5 @@
   <script src="./libs/choices.min.js"></script>
   <script src="./libs/nouislider.min.js"></script>
   <script src="./js/main.js"></script>
-
 </body>
 </html>

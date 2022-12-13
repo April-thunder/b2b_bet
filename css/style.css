@@ -94,7 +94,7 @@ body {
 }
 
 .logo {
-  font-family: Raleway;
+  font-family: "Raleway";
   font-size: 28px;
   font-weight: 800;
   transition: 0.5s all;
@@ -425,7 +425,8 @@ input[type=number] {
   height: 26px;
   width: 26px;
   top: -10px;
-  right: -9px; /* half the width */
+  right: -9px;
+  /* half the width */
   border: 3px solid #286690;
   border-radius: 13px;
   background: #42A9ED;
@@ -433,7 +434,8 @@ input[type=number] {
   cursor: pointer;
 }
 
-.noUi-handle::after, .noUi-handle::before {
+.noUi-handle::after,
+.noUi-handle::before {
   width: 0 !important;
 }
 
