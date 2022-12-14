@@ -17,6 +17,17 @@
   font-weight: 400;
   src: url("/fonts/Lato/Lato-Regular.ttf") format("ttf");
 }
+html,
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.container {
+  max-width: 1190px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -62,17 +73,6 @@ img {
 
 a {
   text-decoration: none;
-}
-
-html,
-body {
-  font-family: "Lato", sans-serif;
-}
-
-.container {
-  max-width: 1190px;
-  margin: 0 auto;
-  padding: 0 20px;
 }
 
 .header {
@@ -131,6 +131,12 @@ body {
   background-size: cover;
   padding-bottom: 202px;
 }
+@media (max-width: 1200px) {
+  .main_section {
+    padding-bottom: 50px;
+    background-size: cover;
+  }
+}
 
 .title {
   padding-top: 203px;
@@ -142,6 +148,11 @@ body {
 }
 .title__blue {
   color: #3E9CDC;
+}
+@media (max-width: 1200px) {
+  .title {
+    padding: 150px 0 50px 0;
+  }
 }
 
 .main_description-title {
@@ -239,6 +250,11 @@ body {
   top: 48px;
   width: 985px;
 }
+@media (max-width: 1200px) {
+  .dots_block {
+    display: none;
+  }
+}
 
 .dots {
   background-image: url(../images/dots-group.svg);
@@ -302,11 +318,12 @@ body {
   font-size: 18px;
   background-color: #272733;
   color: #fff;
+  z-index: 10;
 }
 
 .choices__list--dropdown .choices__item--selectable.is-highlighted {
   color: #42A9ED;
-  background-color: transparent;
+  background-color: #272733;
 }
 
 .choices__list--dropdown .choices__item--selectable.is-highlighted::after {
@@ -320,6 +337,8 @@ body {
 .choices__inner {
   background-color: rgba(255, 255, 255, 0.85);
   color: rgb(39, 39, 51);
+  height: 47px;
+  border-radius: 3px;
 }
 
 .input {
@@ -335,6 +354,7 @@ body {
   background-color: #fff;
   cursor: pointer;
   outline: none;
+  margin-left: 15px;
 }
 .input_file:hover {
   transition: 0.3s ease-in-out;
@@ -355,10 +375,18 @@ body {
   background-repeat: no-repeat;
   background-position: left center;
 }
+.input__email {
+  margin: 0 15px;
+}
 
 .form-down {
   display: flex;
   justify-content: space-between;
+}
+@media (max-width: 1200px) {
+  .form-down {
+    justify-content: space-around;
+  }
 }
 
 .range_text_block {
@@ -373,6 +401,11 @@ body {
 
 .range {
   width: 755px;
+}
+@media (max-width: 1200px) {
+  .range {
+    width: 100%;
+  }
 }
 
 .noUi-target {
@@ -457,12 +490,25 @@ input[type=number] {
 .copyright__uppercase {
   text-transform: uppercase;
 }
+@media (max-width: 1200px) {
+  .copyright {
+    order: 1;
+    padding-top: 15px;
+  }
+}
 
 .footer_wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 30px 0;
+}
+@media (max-width: 1200px) {
+  .footer_wrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 15px 0;
+  }
 }
 
 .pay_systems {
@@ -473,6 +519,11 @@ input[type=number] {
   width: 455px;
   border-left: 1px solid #C3C3C3;
   border-right: 1px solid #C3C3C3;
+}
+@media (max-width: 1200px) {
+  .pay_systems {
+    border: none;
+  }
 }
 
 .pay_systems-item {

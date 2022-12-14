@@ -1,10 +1,12 @@
+@import "fonts";
+@import "global";
+@import "reset";
 @import "vars";
 @import "mixins";
-@import "fonts";
-@import "reset";
 @import "libs";
+@import "breakpoint";
 @import "media";
-@import "global";
+
 
 .header {
     background-color: #000000;
@@ -65,8 +67,12 @@
     background-image: url('../images/main.png');
     background-repeat: no-repeat;
     background-position: top;
-    background-size: cover;
+    background-size:cover;
     padding-bottom: 202px;
+    @include minidesk {
+        padding-bottom: 50px;
+        background-size: cover;
+    }
 }
 
 .title {
@@ -79,6 +85,10 @@
 
     &__blue {
         color: $main-blue;
+    }
+
+    @include minidesk {
+        padding: 150px 0 50px 0;
     }
 }
 
@@ -182,6 +192,9 @@
 
 .dots_block {
     @include flex_space-between;
+    @include minidesk {
+        display: none;
+    }
     position: absolute;
     padding-left: 165px;
     top: 48px;
@@ -200,6 +213,7 @@
     flex-direction: column;
     align-items: center;
     width: 200px;
+
 
     &-title {
         color: #fff;
@@ -235,6 +249,8 @@
             background-image: url('../images/money-icon.svg');
         }
     }
+
+
 }
 
 .form-up {
@@ -258,12 +274,13 @@
     font-size: 18px;
     background-color: #272733;
     color: #fff;
+    z-index: 10;
 }
 
 // В выпадающем списке цвет пункта на который наводим
 .choices__list--dropdown .choices__item--selectable.is-highlighted {
     color: #42A9ED;
-    background-color: transparent;
+    background-color: #272733;
 }
 
 // Убираем надпись Press to select в выпадающем списке
@@ -279,6 +296,8 @@
 .choices__inner {
     background-color: rgba(255, 255, 255, 0.85);
     color: rgba(39, 39, 51, 1);
+    height: 47px;
+    border-radius: 3px;
 }
 
 .input {
@@ -294,6 +313,7 @@
         background-color: #fff;
         cursor: pointer;
         outline: none;
+        margin-left: 15px;
 
         &:hover {
             transition: 0.3s ease-in-out;
@@ -316,10 +336,16 @@
             background-position: left center;
         }
     }
+    &__email {
+        margin: 0 15px;
+    }
 }
 
 .form-down {
     @include flex_space-between;
+    @include minidesk {
+        justify-content:space-around;
+    }
 }
 
 //Стилизуем инпут-слайдер
@@ -335,6 +361,9 @@
 
 .range {
     width: 755px;
+    @include minidesk {
+        width: 100%;
+    }
 }
 
 .noUi-target {
@@ -423,12 +452,23 @@ input[type=number] {
     &__uppercase {
         text-transform: uppercase;
     }
+
+    @include minidesk {
+        order: 1;
+        padding-top: 15px;
+
+    }
 }
 
 .footer_wrapper {
     @include flex_space-between;
     align-items: center;
     padding: 30px 0;
+    @include minidesk {
+        flex-wrap: wrap;
+        justify-content:center;
+        padding: 15px 0;
+    }
 }
 
 .pay_systems {
@@ -439,6 +479,9 @@ input[type=number] {
     width: 455px;
     border-left: 1px solid $footer-text;
     border-right: 1px solid $footer-text;
+    @include minidesk {
+    border: none;
+    }
 }
 
 .pay_systems-item {
