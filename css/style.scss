@@ -89,6 +89,7 @@
     }
     @include tablet {
         padding-bottom: 30px;
+        
     }
 }
 
@@ -502,6 +503,9 @@ input[type=number] {
     background-color: $footer-background;
     font-size: 13px;
     font-weight: 400;
+    @include tablet {
+        font-size: 12px;
+}
 }
 
 .footer_wrapper {
@@ -513,6 +517,10 @@ input[type=number] {
         justify-content:center;
         padding: 15px 0;
     }
+    @include tablet {
+        flex-direction: column;
+        padding: 10px 0;
+}
 }
 
 .copyright {
@@ -527,6 +535,10 @@ input[type=number] {
     &__uppercase {
         text-transform: uppercase;
     }
+        @include tablet {
+        margin: 0;
+        padding-top: 0;
+}
 
   
 }
@@ -576,8 +588,9 @@ input[type=number] {
         margin-left: 40px;
         background-repeat: no-repeat;
         background-position: left;
-            @include minidesk {
-                margin-left: 15px;
+
+        @include minidesk {
+            margin-left: 15px;
         }
 
         &__mail {
@@ -591,5 +604,9 @@ input[type=number] {
 
     &-item a {
         color: #fff;
+    }
+
+    @include tablet {
+        padding: 10px 0 !important;
     }
 }

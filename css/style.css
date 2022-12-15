@@ -569,6 +569,11 @@ input[type=number] {
   font-size: 13px;
   font-weight: 400;
 }
+@media (max-width: 800px) {
+  .footer {
+    font-size: 12px;
+  }
+}
 
 .footer_wrapper {
   display: flex;
@@ -581,6 +586,12 @@ input[type=number] {
     flex-wrap: wrap;
     justify-content: center;
     padding: 15px 0;
+  }
+}
+@media (max-width: 800px) {
+  .footer_wrapper {
+    flex-direction: column;
+    padding: 10px 0;
   }
 }
 
@@ -597,6 +608,12 @@ input[type=number] {
 }
 .copyright__uppercase {
   text-transform: uppercase;
+}
+@media (max-width: 800px) {
+  .copyright {
+    margin: 0;
+    padding-top: 0;
+  }
 }
 
 .pay_systems {
@@ -655,4 +672,9 @@ input[type=number] {
 }
 .contacts-item a {
   color: #fff;
+}
+@media (max-width: 800px) {
+  .contacts {
+    padding: 10px 0 !important;
+  }
 }/*# sourceMappingURL=style.css.map */
