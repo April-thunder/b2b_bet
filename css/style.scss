@@ -9,9 +9,8 @@
 
 
 .header {
-    background-color: #000000;
     position: fixed;
-    width: 100%;
+    width:100%;
     background-color: rgba(16, 16, 29, 0.9);
     z-index: 10;
 
@@ -20,6 +19,10 @@
         padding: 34px 0;
         @include tablet {
             padding: 20px 0;
+        }
+
+        @include mobile {
+            padding: 10px 0;
         }
     }
 }
@@ -42,6 +45,10 @@
 
     @include tablet {
         font-size: 20px;
+    }
+
+    @include mobile {
+        font-size: 14px;
     }
 }
 
@@ -75,6 +82,10 @@
         color: $secondary-blue;
         transition: 0.5s all;
     }
+
+    @include mobile {
+    display: none;
+    }
 }
 
 .main_section {
@@ -89,13 +100,15 @@
     }
     @include tablet {
         padding-bottom: 30px;
-        
+    }
+
+    @include minimobile {
+        padding-bottom: 10px;
     }
 }
 
 .title {
-    padding-top: 203px;
-    padding-bottom: 90px;
+    padding: 203px 0 90px 0;
     font-weight: 700;
     font-size: 48px;
     text-transform: uppercase;
@@ -112,8 +125,17 @@
 
     @include tablet {
         font-size: 40px;
-        padding-top: 120px;
-        padding-bottom: 50px;
+        padding: 120px 0 50px 0;
+    }
+
+    @include mobile {
+        font-size: 26px;
+        padding: 60px 0 30px 0;
+    }
+
+    @include minimobile {
+        font-size: 20px;
+        padding: 50px 0 0 0;
     }
 }
 
@@ -123,7 +145,19 @@
         padding-bottom: 10px;
         font-weight: 700;
         font-size: 20px;
+        @include mobile {
+            font-size: 16px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
     }
+
+    @include mobile {
+        font-size: 16px;
+        padding: 0;
+    }
+
+
 }
 
 .main_list {
@@ -135,20 +169,31 @@
         padding-bottom: 5px;
         list-style: none;
 
+
         &::before {
             content: '- ';
         }
+        @include mobile {
+            font-size: 14px;
+        }
+            @include minimobile {
+        font-size: 12px;
+
+    }
     }
 
     @include tablet {
         margin-bottom: 30px;
+    }
+
+    @include minimobile {
+        margin-bottom: 10px;
     }
 }
 
 .btn {
     background-color: $main-blue;
     color: #fff;
-    font-size: 13px;
     width: 183px;
     height: 43px;
     font-size: 13px;
@@ -164,11 +209,25 @@
         color: #2A2B30;
         border: 1px solid #6F6D7B;
         margin-left: 27px;
+        @include minimobile {
+            margin-left: 15px;
+        }
     }
 
     &:hover {
         transition: 0.3s ease-in-out;
         box-shadow: 0px 10px 13px -7px #000000;
+    }
+
+    @include mobile {
+        width: 140px;
+        height: 35px;
+        font-size: 12px;
+    }
+
+    @include minimobile {
+        width: 100px;
+        height: 30px;
     }
 
     &__send {
@@ -183,6 +242,10 @@
         &:hover {
             transition: 0.3s ease-in-out;
             box-shadow: 0px 10px 13px -7px #fff;
+        }
+
+        @include minimobile {
+            width: 280px;
         }
     }
 }
@@ -205,19 +268,26 @@
             padding-top: 30px;
             font-size: 28px;
         }
+        @include mobile {
+            padding-top: 30px;
+            font-size: 20px;
+        }
         &__blue {
             color: $main-blue;
         }
     }
 
     &-warning {
-        margin-top: 30px;
-        margin-bottom: 80px;
+        margin: 30px 0 80px 0;
         color: #BBBBBB;
         font-weight: 400;
         font-size: 18px;
         @include tablet {
             margin-bottom: 30px;
+        }
+        @include mobile {
+            font-size: 14px;
+            margin: 20px 0 30px 0;
         }
     }
 }
@@ -226,6 +296,11 @@
     @include flex_space-between;
     margin: 0 auto 85px auto;
     position: relative;
+    @include mobile {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
 }
 
 .dots_block {
@@ -253,6 +328,9 @@
     width: 200px;
         @include minidesk {
         margin: 0 15px;
+    }
+    @include mobile {
+        margin: 15px;
     }
 
 
@@ -307,6 +385,9 @@
     @include flex_space-between;
     width: 100%;
     margin-bottom: 10px;
+    @include tablet {
+        flex-direction: column;
+    }
 }
 
 // Кастомный селект
@@ -314,6 +395,12 @@
     width: 360px;
     text-align: left;
     color: rgba(39, 39, 51, 1);
+    @include tablet {
+        margin: 0 auto;
+    }
+    @include minimobile {
+        width: 280px;
+    }
 }
 
 //Выпадающий список
@@ -363,47 +450,87 @@
         width: 200px;
     }
 
+    @include tablet {
+        margin: 0 auto;;
+    }
+
+    @include minimobile {
+        width: 280px;
+    }
+
     &_file {
         background-color: #fff;
         cursor: pointer;
         outline: none;
         margin-left: 15px;
-        @include tablet {
-            width: 200px;
-        }
+
         &:hover {
             transition: 0.3s ease-in-out;
             box-shadow: 0px 10px 13px -7px #fff;
         }
 
-        &-text {
-            display: inline-block;
-            text-decoration: none;
-            font-size: 14px;
-            color: #000000;
-            text-align: center;
-            background-color: #fff;
-            padding: 13px 0px 13px 25px;
-            border: none;
-            text-transform: uppercase;
-            transition: 0.3s ease-in-out;
-            background-image: url('../images/attachment-icon.svg');
-            background-repeat: no-repeat;
-            background-position: left center;
-            @include tablet {
-                font-size: 12px;
-            }
-        }
     }
     &__email {
         margin: 0 15px;
+        @include tablet {
+            margin: 30px auto;
+        }
     }
 }
 
+.label_input {
+    width: 360px;
+    height: 47px;
+    padding: 0 10px;
+    color: rgba(39, 39, 51, 1);
+    border: 1px solid #FFFFFF;
+    border-radius: 3px;
+    background-color: #fff;
+    cursor: pointer;
+    outline: none;
+    margin-left: 0px;
+
+    @include minidesk {
+        margin-top: 30px;
+    }
+
+    @include minimobile {
+        width: 280px;
+    }
+}
+
+.input_file-text {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 14px;
+    color: #000000;
+    text-align: center;
+    background-color: #fff;
+    padding: 12px 0px 10px 25px;
+    border: none;
+    text-transform: uppercase;
+    transition: 0.3s ease-in-out;
+    background-image: url('../images/attachment-icon.svg');
+    background-repeat: no-repeat;
+    background-position: left center;
+
+    @include tablet {
+        font-size: 12px;
+    }
+}
+
+input[type=file] {
+    // position: absolute;
+    // z-index: -1;
+    display: none;
+
+}
 .form-down {
+
     @include flex_space-between;
     @include minidesk {
-        justify-content:space-around;
+       flex-wrap: wrap;
+        justify-content: center
     }
 }
 
@@ -416,13 +543,31 @@
     font-weight: 400;
     font-size: 18px;
     margin-bottom: 17px;
+    @include mobile {
+        font-size: 12px;
+    }
 }
 
 .range {
     width: 755px;
-    @include minidesk {
-        width: 100%;
+    &_wrapper {
+        margin-right: 30px;
+        @include minidesk {
+            margin-right: 0;
+        }
+        @include mobile {
+            margin-top: 30px;
+        }
     }
+    @include tablet {
+        width: 400px;
+    }
+
+    @include minimobile {
+        width: 280px;
+    }
+ 
+
 }
 
 .noUi-target {
@@ -438,6 +583,9 @@
     font-weight: 400;
     font-size: 18px;
     text-align: end;
+    @include mobile {
+        font-size: 12px;
+    }
 }
 
 /* прячем стрелки у инпута */
@@ -492,11 +640,7 @@ input[type=number] {
 
 //Конец стилизации инпут-слайдера
 
-.input_file input[type=file] {
-    position: absolute;
-    z-index: -1;
 
-}
 
 
 .footer {
@@ -556,12 +700,20 @@ input[type=number] {
     @include minidesk {
     border: none;
     }
+    @include mobile {
+        width: 100%;
+        }
 }
 
 .pay_systems-item {
     background-repeat: no-repeat;
     background-position: left;
     padding: 2px 0 2px 25px;
+    @include minimobile {
+        padding: 2px 0 2px 20px;
+        background-size: 20%;
+        }
+    
 
     &__qiwi {
         background-image: url("../images/qiwi-icon.svg");
@@ -577,6 +729,9 @@ input[type=number] {
 
     &:nth-child(2) {
         margin: 0 30px;
+        @include minimobile {
+            margin: 0 5px;
+            }
     }
 }
 
