@@ -21,6 +21,13 @@
           <li class="menu-item"><a class="menu-link" href="#">оформить заказ</a></li>
         </ul>
       </nav>
+      <!-- Бургер-меню -->
+      <a class="menu__btn" data-path="form-popup">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+      <!-- Конец бургер-меню -->
      </div>
     </div>
   </header>
@@ -131,6 +138,20 @@
     </div>
    </div>
   </footer>
+<!-- модальное окно -->
+  <div class="modals">
+		<div class="modal-overlay">
+			<div class="modal" data-target="form-popup">
+        <button class="close__icon">X</button>
+        <ul class="modal__list">
+          <li class="modal__item"><a class="modal__link" href="#using">бизнес</a></li>
+          <li class="modal__item"><a class="modal__link" href="#features">о нас</a></li>
+          <li class="modal__item"><a class="modal__link" href="#technology">цены</a></li>
+          <li class="modal__item"><a class="modal__link" href="#contact">оформить заказ</a></li>
+        </ul>
+			</div>
+		</div>
+	</div>
   <script src="./libs/choices.min.js"></script>
   <script src="./libs/nouislider.min.js"></script>
   <script src="./js/main.js"></script>

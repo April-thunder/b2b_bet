@@ -6,607 +6,611 @@
 @import "libs";
 @import "breakpoint";
 @import "media";
-
+@import "modal";
 
 .header {
-    position: fixed;
-    width:100%;
-    background-color: rgba(16, 16, 29, 0.9);
-    z-index: 10;
+  position: fixed;
+  width: 100%;
+  background-color: rgba(16, 16, 29, 0.9);
+  z-index: 10;
 
-    &-wrapper {
-        @include flex_space-between;
-        padding: 34px 0;
-        @include tablet {
-            padding: 20px 0;
-        }
-
-        @include mobile {
-            padding: 10px 0;
-        }
+  &-wrapper {
+    @include flex_space-between;
+    padding: 34px 0;
+    @include tablet {
+      padding: 20px 0;
     }
+    @include mobile {
+      padding: 10px 0;
+    }
+  }
 }
 
 .header a {
-    text-transform: uppercase;
-    color: #fff;
+  text-transform: uppercase;
+  color: #fff;
 }
 
 .logo {
-    font-family: "Raleway";
-    font-size: 28px;
-    font-weight: 800;
+  font-family: "Raleway";
+  font-size: 28px;
+  font-weight: 800;
+  transition: 0.5s all;
+
+  &:hover {
+    opacity: 0.8;
     transition: 0.5s all;
+  }
 
-    &:hover {
-        opacity: 0.8;
-        transition: 0.5s all;
-    }
+  @include tablet {
+    font-size: 20px;
+  }
 
-    @include tablet {
-        font-size: 20px;
-    }
-
-    @include mobile {
-        font-size: 14px;
-    }
+  @include mobile {
+    font-size: 14px;
+  }
 }
 
 .logo {
-    &__blue {
-        color: $secondary-blue;
-    }
+  &__blue {
+    color: $secondary-blue;
+  }
 }
 
 .menu {
-    &-list {
-        @include flex_space-between;
-        margin-top: 7px;
-        width: 420px;
-        @include tablet {
-            margin-top: 0;
-            width: 300px;
-        }
+  &-list {
+    @include flex_space-between;
+    margin-top: 7px;
+    width: 420px;
+    @include tablet {
+      margin-top: 0;
+      width: 300px;
     }
+  }
 
-    &-link {
-        font-weight: 600;
-        font-size: 13px;
-        transition: 0.5s all;
-        @include tablet {
-            font-size: 12px;
-        }
+  &-link {
+    font-weight: 600;
+    font-size: 13px;
+    transition: 0.5s all;
+    @include tablet {
+      font-size: 12px;
     }
+  }
 
-    &-link:hover {
-        color: $secondary-blue;
-        transition: 0.5s all;
-    }
+  &-link:hover {
+    color: $secondary-blue;
+    transition: 0.5s all;
+  }
 
-    @include mobile {
+  @include mobile {
     display: none;
-    }
+  }
+}
+
+.menu__btn {
+  display: none;
+  @include mobile {
+    display: block;
+    margin-right: 0px;
+    background-color: transparent;
+    border: none;
+    float: right;
+  }
+}
+
+.menu__btn span {
+  display: block;
+  height: 2px;
+  width: 30px;
+  background: #fff;
+}
+
+.menu__btn span:nth-child(2) {
+  margin: 7px 0;
 }
 
 .main_section {
-    background-image: url('../images/main.png');
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size:cover;
-    padding-bottom: 202px;
-    @include minidesk {
-        padding-bottom: 50px;
-        background-size: cover;
-    }
-    @include tablet {
-        padding-bottom: 30px;
-    }
+  background-image: url("../images/main.png");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  padding-bottom: 202px;
+  @include minidesk {
+    padding-bottom: 50px;
+    background-size: cover;
+  }
+  @include tablet {
+    padding-bottom: 30px;
+  }
 
-    @include minimobile {
-        padding-bottom: 10px;
-    }
+  @include minimobile {
+    padding-bottom: 10px;
+  }
 }
 
 .title {
-    padding: 203px 0 90px 0;
-    font-weight: 700;
-    font-size: 48px;
-    text-transform: uppercase;
-    max-width: 790px;
+  padding: 203px 0 90px 0;
+  font-weight: 700;
+  font-size: 48px;
+  text-transform: uppercase;
+  max-width: 790px;
 
+  &__blue {
+    color: $main-blue;
+  }
 
-    &__blue {
-        color: $main-blue;
-    }
+  @include minidesk {
+    padding: 150px 0 50px 0;
+  }
 
-    @include minidesk {
-        padding: 150px 0 50px 0;
-    }
+  @include tablet {
+    font-size: 40px;
+    padding: 120px 0 50px 0;
+  }
 
-    @include tablet {
-        font-size: 40px;
-        padding: 120px 0 50px 0;
-    }
+  @include mobile {
+    font-size: 26px;
+    padding: 60px 0 30px 0;
+  }
 
-    @include mobile {
-        font-size: 26px;
-        padding: 60px 0 30px 0;
-    }
-
-    @include minimobile {
-        font-size: 20px;
-        padding: 50px 0 0 0;
-    }
+  @include minimobile {
+    font-size: 20px;
+    padding: 50px 0 0 0;
+  }
 }
 
 .main_description {
-
-    &-title {
-        padding-bottom: 10px;
-        font-weight: 700;
-        font-size: 20px;
-        @include mobile {
-            font-size: 16px;
-            padding-top: 10px;
-            padding-bottom: 10px;
-        }
-    }
-
+  &-title {
+    padding-bottom: 10px;
+    font-weight: 700;
+    font-size: 20px;
     @include mobile {
-        font-size: 16px;
-        padding: 0;
+      font-size: 16px;
+      padding-top: 10px;
+      padding-bottom: 10px;
     }
+  }
 
-
+  @include mobile {
+    font-size: 16px;
+    padding: 0;
+  }
 }
 
 .main_list {
-    margin-left: 8px;
-    margin-bottom: 75px;
+  margin-left: 8px;
+  margin-bottom: 75px;
 
-    &-item {
-        font-size: 20px;
-        padding-bottom: 5px;
-        list-style: none;
+  &-item {
+    font-size: 20px;
+    padding-bottom: 5px;
+    list-style: none;
 
-
-        &::before {
-            content: '- ';
-        }
-        @include mobile {
-            font-size: 14px;
-        }
-            @include minimobile {
-        font-size: 12px;
-
+    &::before {
+      content: "- ";
     }
+    @include mobile {
+      font-size: 14px;
     }
-
-    @include tablet {
-        margin-bottom: 30px;
-    }
-
     @include minimobile {
-        margin-bottom: 10px;
+      font-size: 12px;
     }
+  }
+
+  @include tablet {
+    margin-bottom: 30px;
+  }
+
+  @include minimobile {
+    margin-bottom: 10px;
+  }
 }
 
 .btn {
-    background-color: $main-blue;
-    color: #fff;
-    width: 183px;
-    height: 43px;
-    font-size: 13px;
-    text-transform: uppercase;
-    cursor: pointer;
-    border: 1px solid #FFFFFF;
-    border-radius: 4px;
-    box-shadow: none;
-    transition: 0.3s ease-in-out;
+  background-color: $main-blue;
+  color: #fff;
+  width: 183px;
+  height: 43px;
+  font-size: 13px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  box-shadow: none;
+  transition: 0.3s ease-in-out;
 
-    &__details {
-        background-color: #fff;
-        color: #2A2B30;
-        border: 1px solid #6F6D7B;
-        margin-left: 27px;
-        @include minimobile {
-            margin-left: 15px;
-        }
+  &__details {
+    background-color: #fff;
+    color: #2a2b30;
+    border: 1px solid #6f6d7b;
+    margin-left: 27px;
+    @include minimobile {
+      margin-left: 15px;
     }
+  }
 
+  &:hover {
+    transition: 0.3s ease-in-out;
+    box-shadow: 0px 10px 13px -7px #000000;
+  }
+
+  @include mobile {
+    width: 140px;
+    height: 35px;
+    font-size: 12px;
+  }
+
+  @include minimobile {
+    width: 100px;
+    height: 30px;
+  }
+
+  &__send {
+    width: 360px;
+    height: 46px;
+    margin: 58px 0 150px 0;
+    transition: 0.3s ease-in-out;
     &:hover {
         transition: 0.3s ease-in-out;
-        box-shadow: 0px 10px 13px -7px #000000;
+        box-shadow: 0px 10px 13px -7px #fff;
+      }
+    @include tablet {
+      margin: 30px 0 60px 0;
     }
-
-    @include mobile {
-        width: 140px;
-        height: 35px;
-        font-size: 12px;
-    }
-
     @include minimobile {
-        width: 100px;
-        height: 30px;
+      width: 280px;
     }
-
-    &__send {
-        width: 360px;
-        height: 46px;
-        margin: 58px 0 150px 0;
-        transition: 0.3s ease-in-out;
-        @include tablet {
-            margin: 30px 0 60px 0;
-         }
-
-        &:hover {
-            transition: 0.3s ease-in-out;
-            box-shadow: 0px 10px 13px -7px #fff;
-        }
-
-        @include minimobile {
-            width: 280px;
-        }
-    }
+  }
 }
 
 .order_section {
-    background-color: #272733;
-    background-image: url('../images/background-map.png');
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: cover;
-    text-align: center;
+  background-color: #272733;
+  background-image: url("../images/background-map.png");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  text-align: center;
 
-    &-title {
-        padding-top: 119px;
-        color: #fff;
-        text-transform: uppercase;
-        font-weight: 700;
-        font-size: 36px;
-        @include tablet {
-            padding-top: 30px;
-            font-size: 28px;
-        }
-        @include mobile {
-            padding-top: 30px;
-            font-size: 20px;
-        }
-        &__blue {
-            color: $main-blue;
-        }
+  &-title {
+    padding-top: 119px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 36px;
+    @include tablet {
+      padding-top: 30px;
+      font-size: 28px;
     }
+    @include mobile {
+      padding-top: 30px;
+      font-size: 20px;
+    }
+    &__blue {
+      color: $main-blue;
+    }
+  }
 
-    &-warning {
-        margin: 30px 0 80px 0;
-        color: #BBBBBB;
-        font-weight: 400;
-        font-size: 18px;
-        @include tablet {
-            margin-bottom: 30px;
-        }
-        @include mobile {
-            font-size: 14px;
-            margin: 20px 0 30px 0;
-        }
+  &-warning {
+    margin: 30px 0 80px 0;
+    color: #bbbbbb;
+    font-weight: 400;
+    font-size: 18px;
+    @include tablet {
+      margin-bottom: 30px;
     }
+    @include mobile {
+      font-size: 14px;
+      margin: 20px 0 30px 0;
+    }
+  }
 }
 
 .benefits_wrapper {
-    @include flex_space-between;
-    margin: 0 auto 85px auto;
-    position: relative;
-    @include mobile {
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-bottom: 20px;
-    }
+  @include flex_space-between;
+  margin: 0 auto 85px auto;
+  position: relative;
+  @include mobile {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
 }
 
 .dots_block {
-    @include flex_space-between;
-    @include minidesk {
-        display: none;
-    }
-    position: absolute;
-    padding-left: 165px;
-    top: 48px;
-    width: 985px;
+  @include flex_space-between;
+  @include minidesk {
+    display: none;
+  }
+  position: absolute;
+  padding-left: 165px;
+  top: 48px;
+  width: 985px;
 }
 
 .dots {
-    background-image: url(../images/dots-group.svg);
-    background-repeat: no-repeat;
-    width: 110px;
-    height: 7px;
+  background-image: url(../images/dots-group.svg);
+  background-repeat: no-repeat;
+  width: 110px;
+  height: 7px;
 }
 
 .benefit_block {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 200px;
-        @include minidesk {
-        margin: 0 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  @include minidesk {
+    margin: 0 15px;
+  }
+  @include mobile {
+    margin: 15px;
+  }
+
+  &-title {
+    color: #fff;
+    padding-top: 21px;
+    @include tablet {
+      font-size: 12px;
     }
-    @include mobile {
-        margin: 15px;
-    }
+  }
 
-
-    &-title {
-        color: #fff;
-        padding-top: 21px;
-        @include tablet {
-            font-size: 12px;
-        }
-    }
-
-    &-icon {
-        width: 100px;
-        height: 100px;
-        border: 5px solid $border-blue;
-        border-radius: 50%;
-        background-color: $main-blue;
-        background-repeat: no-repeat;
-        background-position: center;
-        @include tablet {
-            width: 70px;
-            height: 70px;
-            border: 2px solid $border-blue;
-            background-size: 40%;
-        }
-
-        &__search {
-            background-image: url('../images/search-icon.svg');
-        }
-
-        &__percent {
-            background-image: url('../images/percent-icon.svg');
-        }
-
-        &__document {
-            background-image: url('../images/document-icon.svg');
-        }
-
-        &__letter {
-            background-image: url('../images/letter-icon.svg');
-        }
-
-        &__money {
-            background-image: url('../images/money-icon.svg');
-        }
+  &-icon {
+    width: 100px;
+    height: 100px;
+    border: 5px solid $border-blue;
+    border-radius: 50%;
+    background-color: $main-blue;
+    background-repeat: no-repeat;
+    background-position: center;
+    @include tablet {
+      width: 70px;
+      height: 70px;
+      border: 2px solid $border-blue;
+      background-size: 40%;
     }
 
+    &__search {
+      background-image: url("../images/search-icon.svg");
+    }
 
+    &__percent {
+      background-image: url("../images/percent-icon.svg");
+    }
+
+    &__document {
+      background-image: url("../images/document-icon.svg");
+    }
+
+    &__letter {
+      background-image: url("../images/letter-icon.svg");
+    }
+
+    &__money {
+      background-image: url("../images/money-icon.svg");
+    }
+  }
 }
 
 .form-up {
-    @include flex_space-between;
-    width: 100%;
-    margin-bottom: 10px;
-    @include tablet {
-        flex-direction: column;
-    }
+  @include flex_space-between;
+  width: 100%;
+  margin-bottom: 10px;
+  @include tablet {
+    flex-direction: column;
+  }
 }
 
 // Кастомный селект
 .choices {
-    width: 360px;
-    text-align: left;
-    color: rgba(39, 39, 51, 1);
-    @include tablet {
-        margin: 0 auto;
-    }
-    @include minimobile {
-        width: 280px;
-    }
+  width: 360px;
+  text-align: left;
+  color: rgba(39, 39, 51, 1);
+  @include tablet {
+    margin: 0 auto;
+  }
+  @include minimobile {
+    width: 280px;
+  }
 }
 
 //Выпадающий список
 .choices__list.choices__list--dropdown {
-    border: 1px solid rgb(90, 87, 87);
-    border-top: none;
-    font-weight: 400;
-    font-size: 18px;
-    background-color: #272733;
-    color: #fff;
-    z-index: 10;
+  border: 1px solid rgb(90, 87, 87);
+  border-top: none;
+  font-weight: 400;
+  font-size: 18px;
+  background-color: #272733;
+  color: #fff;
+  z-index: 10;
 }
 
 // В выпадающем списке цвет пункта на который наводим
 .choices__list--dropdown .choices__item--selectable.is-highlighted {
-    color: #42A9ED;
-    background-color: #272733;
+  color: #42a9ed;
+  background-color: #272733;
 }
 
 // Убираем надпись Press to select в выпадающем списке
 .choices__list--dropdown .choices__item--selectable.is-highlighted::after {
-    display: none;
+  display: none;
 }
 
 // Убираем первый пункт из выпадающего списка
 #choices--select-item-choice-1 {
-    display: none;
+  display: none;
 }
 
 .choices__inner {
-    background-color: rgba(255, 255, 255, 0.85);
-    color: rgba(39, 39, 51, 1);
-    height: 47px;
-    border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.85);
+  color: rgba(39, 39, 51, 1);
+  height: 47px;
+  border-radius: 3px;
 }
 
 .input {
-    width: 360px;
-    height: 47px;
-    padding: 0 10px;
-    color: rgba(39, 39, 51, 1);
-    background: rgba(255, 255, 255, 0.85);
-    border: 1px solid #FFFFFF;
-    border-radius: 3px;
+  width: 360px;
+  height: 47px;
+  padding: 0 10px;
+  color: rgba(39, 39, 51, 1);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #ffffff;
+  border-radius: 3px;
 
-    @include tablet {
-        width: 200px;
-    }
+  @include tablet {
+    width: 200px;
+  }
 
-    @include tablet {
-        margin: 0 auto;;
-    }
+  @include tablet {
+    margin: 0 auto;
+  }
 
-    @include minimobile {
-        width: 280px;
-    }
+  @include minimobile {
+    width: 280px;
+  }
 
-    &_file {
-        background-color: #fff;
-        cursor: pointer;
-        outline: none;
-        margin-left: 15px;
-
-        &:hover {
-            transition: 0.3s ease-in-out;
-            box-shadow: 0px 10px 13px -7px #fff;
-        }
-
-    }
-    &__email {
-        margin: 0 15px;
-        @include tablet {
-            margin: 30px auto;
-        }
-    }
-}
-
-.label_input {
-    width: 360px;
-    height: 47px;
-    padding: 0 10px;
-    color: rgba(39, 39, 51, 1);
-    border: 1px solid #FFFFFF;
-    border-radius: 3px;
+  &_file {
     background-color: #fff;
     cursor: pointer;
     outline: none;
-    margin-left: 0px;
-
-    @include minidesk {
-        margin-top: 30px;
+    margin-left: 15px;
+  }
+  &__email {
+    margin: 0 15px;
+    @include tablet {
+      margin: 30px auto;
     }
+  }
+}
 
-    @include minimobile {
-        width: 280px;
-    }
+.label_input {
+  width: 360px;
+  height: 47px;
+  padding: 0 10px;
+  color: rgba(39, 39, 51, 1);
+  border: 1px solid #ffffff;
+  border-radius: 3px;
+  background-color: #fff;
+  cursor: pointer;
+  outline: none;
+  margin-left: 0px;
+  &:hover {
+    transition: 0.3s ease-in-out;
+    box-shadow: 0px 10px 13px -7px #fff;
+  }
+
+  @include minidesk {
+    margin-top: 30px;
+  }
+
+  @include minimobile {
+    width: 280px;
+  }
 }
 
 .input_file-text {
-    display: inline-block;
-    text-decoration: none;
-    font-size: 14px;
-    color: #000000;
-    text-align: center;
-    background-color: #fff;
-    padding: 12px 0px 10px 25px;
-    border: none;
-    text-transform: uppercase;
-    transition: 0.3s ease-in-out;
-    background-image: url('../images/attachment-icon.svg');
-    background-repeat: no-repeat;
-    background-position: left center;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 14px;
+  color: #000000;
+  text-align: center;
+  background-color: #fff;
+  padding: 12px 0px 10px 25px;
+  border: none;
+  text-transform: uppercase;
+  transition: 0.3s ease-in-out;
+  background-image: url("../images/attachment-icon.svg");
+  background-repeat: no-repeat;
+  background-position: left center;
 
-    @include tablet {
-        font-size: 12px;
-    }
+  @include tablet {
+    font-size: 12px;
+  }
 }
 
-input[type=file] {
-    // position: absolute;
-    // z-index: -1;
-    display: none;
-
+input[type="file"] {
+  // position: absolute;
+  // z-index: -1;
+  display: none;
 }
 .form-down {
-
-    @include flex_space-between;
-    @include minidesk {
-       flex-wrap: wrap;
-        justify-content: center
-    }
+  @include flex_space-between;
+  @include minidesk {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 //Стилизуем инпут-слайдер
 
 .range_text_block {
-    @include flex_space-between;
-    align-items: center;
-    color: #fff;
-    font-weight: 400;
-    font-size: 18px;
-    margin-bottom: 17px;
-    @include mobile {
-        font-size: 12px;
-    }
+  @include flex_space-between;
+  align-items: center;
+  color: #fff;
+  font-weight: 400;
+  font-size: 18px;
+  margin-bottom: 17px;
+  @include mobile {
+    font-size: 12px;
+  }
 }
 
 .range {
-    width: 755px;
-    &_wrapper {
-        margin-right: 30px;
-        @include minidesk {
-            margin-right: 0;
-        }
-        @include mobile {
-            margin-top: 30px;
-        }
+  width: 755px;
+  &_wrapper {
+    margin-right: 30px;
+    @include minidesk {
+      margin-right: 0;
     }
-    @include tablet {
-        width: 400px;
+    @include mobile {
+      margin-top: 30px;
     }
+  }
+  @include tablet {
+    width: 400px;
+  }
 
-    @include minimobile {
-        width: 280px;
-    }
- 
-
+  @include minimobile {
+    width: 280px;
+  }
 }
 
 .noUi-target {
-    border: 1px solid #fff !important;
-    background-color: #bdbdc0 !important;
+  border: 1px solid #fff !important;
+  background-color: #bdbdc0 !important;
 }
 
 .range-input {
-    color: #fff;
-    background-color: transparent;
-    border: none;
-    width: 33px;
-    font-weight: 400;
-    font-size: 18px;
-    text-align: end;
-    @include mobile {
-        font-size: 12px;
-    }
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  width: 33px;
+  font-weight: 400;
+  font-size: 18px;
+  text-align: end;
+  @include mobile {
+    font-size: 12px;
+  }
 }
 
 /* прячем стрелки у инпута */
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 /* Firefox */
-input[type=number] {
-    -moz-appearance: textfield;
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 
 #range-slider {
-    height: 10px;
+  height: 10px;
 }
 
 #range-slider .noUi-connect {
-    background: #bdbdc0;
+  background: #bdbdc0;
 }
 
 .noUi-base,
@@ -616,152 +620,148 @@ input[type=number] {
 .noUi-horizontal,
 .noUi-txt-dir-ltr,
 .noUi-connects {
-    height: 7px !important;
+  height: 7px !important;
 }
 
-
 #range-slider .noUi-handle {
-    height: 26px;
-    width: 26px;
-    top: -10px;
-    right: -9px;
-    /* half the width */
-    border: 3px solid #286690;
-    border-radius: 13px;
-    background: #42A9ED;
-    box-shadow: none;
-    cursor: pointer;
+  height: 26px;
+  width: 26px;
+  top: -10px;
+  right: -9px;
+  /* half the width */
+  border: 3px solid #286690;
+  border-radius: 13px;
+  background: #42a9ed;
+  box-shadow: none;
+  cursor: pointer;
 }
 
 .noUi-handle::after,
 .noUi-handle::before {
-    width: 0 !important;
+  width: 0 !important;
 }
 
 //Конец стилизации инпут-слайдера
 
-
-
-
 .footer {
-    background-color: $footer-background;
-    font-size: 13px;
-    font-weight: 400;
-    @include tablet {
-        font-size: 12px;
-}
+  background-color: $footer-background;
+  font-size: 13px;
+  font-weight: 400;
+  @include tablet {
+    font-size: 12px;
+  }
 }
 
 .footer_wrapper {
-    @include flex_space-between;
-    align-items: center;
-    padding: 30px 0;
-    @include minidesk {
-        flex-wrap: wrap;
-        justify-content:center;
-        padding: 15px 0;
-    }
-    @include tablet {
-        flex-direction: column;
-        padding: 10px 0;
-}
+  @include flex_space-between;
+  align-items: center;
+  padding: 30px 0;
+  @include minidesk {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 15px 0;
+  }
+  @include tablet {
+    flex-direction: column;
+    padding: 10px 0;
+  }
 }
 
 .copyright {
-    @include minidesk {
-        order: 1;
-        padding-top: 15px;
-        margin: 0 60px;
-    }
-    color: #fff;
-    margin-right: 50px;
+  @include minidesk {
+    order: 1;
+    padding-top: 15px;
+    margin: 0 60px;
+  }
+  color: #fff;
+  margin-right: 50px;
 
-    &__uppercase {
-        text-transform: uppercase;
-    }
-        @include tablet {
-        margin: 0;
-        padding-top: 0;
+  &__uppercase {
+    text-transform: uppercase;
+  }
+  @include tablet {
+    margin: 0;
+    padding-top: 0;
+  }
 }
-
-  
-}
-
-
 
 .pay_systems {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: $footer-text;
-    width: 455px;
-    border-left: 1px solid $footer-text;
-    border-right: 1px solid $footer-text;
-    @include minidesk {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $footer-text;
+  width: 455px;
+  border-left: 1px solid $footer-text;
+  border-right: 1px solid $footer-text;
+  @include minidesk {
     border: none;
-    }
-    @include mobile {
-        width: 100%;
-        }
+  }
+  @include mobile {
+    width: 100%;
+  }
 }
 
 .pay_systems-item {
-    background-repeat: no-repeat;
-    background-position: left;
-    padding: 2px 0 2px 25px;
+  background-repeat: no-repeat;
+  background-position: left;
+  padding: 2px 0 2px 25px;
+  @include minimobile {
+    padding: 2px 0 2px 20px;
+    background-size: 20%;
+  }
+
+  &__qiwi {
+    background-image: url("../images/qiwi-icon.svg");
+  }
+
+  &__ya {
+    background-image: url("../images/yandex-icon.svg");
+  }
+
+  &__wm {
+    background-image: url("../images/wm-icon.svg");
+  }
+
+  &:nth-child(2) {
+    margin: 0 30px;
     @include minimobile {
-        padding: 2px 0 2px 20px;
-        background-size: 20%;
-        }
-    
-
-    &__qiwi {
-        background-image: url("../images/qiwi-icon.svg");
+      margin: 0 5px;
     }
-
-    &__ya {
-        background-image: url("../images/yandex-icon.svg");
-    }
-
-    &__wm {
-        background-image: url("../images/wm-icon.svg");
-    }
-
-    &:nth-child(2) {
-        margin: 0 30px;
-        @include minimobile {
-            margin: 0 5px;
-            }
-    }
+  }
 }
 
 .contacts {
-    @include flex_space-between;
+  @include flex_space-between;
 
-    &-link {
-        padding-left: 25px;
-        margin-left: 40px;
-        background-repeat: no-repeat;
-        background-position: left;
+  &-link {
+    padding-left: 25px;
+    margin-left: 40px;
+    background-repeat: no-repeat;
+    background-position: left;
+    transition: 0.5s all;
+    &:hover {
+        color: $secondary-blue;
+        transition: 0.5s all;
+      }
 
-        @include minidesk {
-            margin-left: 15px;
-        }
-
-        &__mail {
-            background-image: url("../images/mail-icon.svg");
-        }
-
-        &__vk {
-            background-image: url("../images/vk-icon.svg");
-        }
+    @include minidesk {
+      margin-left: 15px;
     }
 
-    &-item a {
-        color: #fff;
+    &__mail {
+      background-image: url("../images/mail-icon.svg");
     }
 
-    @include tablet {
-        padding: 10px 0 !important;
+    &__vk {
+      background-image: url("../images/vk-icon.svg");
     }
+  }
+
+  &-item a {
+    color: #fff;
+  }
+
+  @include tablet {
+    padding: 10px 0 !important;
+  }
 }
