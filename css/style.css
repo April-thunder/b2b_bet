@@ -188,7 +188,7 @@ a {
 }
 
 .logo {
-  font-family: "Raleway";
+  font-family: 'Raleway', sans-serif;
   font-size: 28px;
   font-weight: 800;
   -webkit-transition: 0.5s all;
@@ -1049,7 +1049,7 @@ input[type=number] {
           justify-content: space-between;
 }
 .contacts-link {
-  padding-left: 25px;
+  padding-left: 23px;
   margin-left: 40px;
   background-repeat: no-repeat;
   background-position: left;
