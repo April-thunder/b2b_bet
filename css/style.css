@@ -1049,8 +1049,8 @@ input[type=number] {
           justify-content: space-between;
 }
 .contacts-link {
-  padding-left: 23px;
-  margin-left: 40px;
+  padding-left: 20px;
+  margin-left: 35px;
   background-repeat: no-repeat;
   background-position: left;
   -webkit-transition: 0.5s all;
