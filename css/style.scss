@@ -18,6 +18,9 @@
     &-wrapper {
         @include flex_space-between;
         padding: 34px 0;
+        @include tablet {
+            padding: 20px 0;
+        }
     }
 }
 
@@ -36,6 +39,10 @@
         opacity: 0.8;
         transition: 0.5s all;
     }
+
+    @include tablet {
+        font-size: 20px;
+    }
 }
 
 .logo {
@@ -49,12 +56,19 @@
         @include flex_space-between;
         margin-top: 7px;
         width: 420px;
+        @include tablet {
+            margin-top: 0;
+            width: 300px;
+        }
     }
 
     &-link {
         font-weight: 600;
         font-size: 13px;
         transition: 0.5s all;
+        @include tablet {
+            font-size: 12px;
+        }
     }
 
     &-link:hover {
@@ -73,6 +87,9 @@
         padding-bottom: 50px;
         background-size: cover;
     }
+    @include tablet {
+        padding-bottom: 30px;
+    }
 }
 
 .title {
@@ -83,12 +100,19 @@
     text-transform: uppercase;
     max-width: 790px;
 
+
     &__blue {
         color: $main-blue;
     }
 
     @include minidesk {
         padding: 150px 0 50px 0;
+    }
+
+    @include tablet {
+        font-size: 40px;
+        padding-top: 120px;
+        padding-bottom: 50px;
     }
 }
 
@@ -113,6 +137,10 @@
         &::before {
             content: '- ';
         }
+    }
+
+    @include tablet {
+        margin-bottom: 30px;
     }
 }
 
@@ -147,6 +175,9 @@
         height: 46px;
         margin: 58px 0 150px 0;
         transition: 0.3s ease-in-out;
+        @include tablet {
+            margin: 30px 0 60px 0;
+         }
 
         &:hover {
             transition: 0.3s ease-in-out;
@@ -169,7 +200,10 @@
         text-transform: uppercase;
         font-weight: 700;
         font-size: 36px;
-
+        @include tablet {
+            padding-top: 30px;
+            font-size: 28px;
+        }
         &__blue {
             color: $main-blue;
         }
@@ -181,6 +215,9 @@
         color: #BBBBBB;
         font-weight: 400;
         font-size: 18px;
+        @include tablet {
+            margin-bottom: 30px;
+        }
     }
 }
 
@@ -213,11 +250,17 @@
     flex-direction: column;
     align-items: center;
     width: 200px;
+        @include minidesk {
+        margin: 0 15px;
+    }
 
 
     &-title {
         color: #fff;
         padding-top: 21px;
+        @include tablet {
+            font-size: 12px;
+        }
     }
 
     &-icon {
@@ -228,6 +271,12 @@
         background-color: $main-blue;
         background-repeat: no-repeat;
         background-position: center;
+        @include tablet {
+            width: 70px;
+            height: 70px;
+            border: 2px solid $border-blue;
+            background-size: 40%;
+        }
 
         &__search {
             background-image: url('../images/search-icon.svg');
@@ -309,12 +358,18 @@
     border: 1px solid #FFFFFF;
     border-radius: 3px;
 
+    @include tablet {
+        width: 200px;
+    }
+
     &_file {
         background-color: #fff;
         cursor: pointer;
         outline: none;
         margin-left: 15px;
-
+        @include tablet {
+            width: 200px;
+        }
         &:hover {
             transition: 0.3s ease-in-out;
             box-shadow: 0px 10px 13px -7px #fff;
@@ -334,6 +389,9 @@
             background-image: url('../images/attachment-icon.svg');
             background-repeat: no-repeat;
             background-position: left center;
+            @include tablet {
+                font-size: 12px;
+            }
         }
     }
     &__email {
@@ -436,6 +494,7 @@ input[type=number] {
 .input_file input[type=file] {
     position: absolute;
     z-index: -1;
+
 }
 
 
@@ -443,21 +502,6 @@ input[type=number] {
     background-color: $footer-background;
     font-size: 13px;
     font-weight: 400;
-}
-
-.copyright {
-    color: #fff;
-    margin-right: 50px;
-
-    &__uppercase {
-        text-transform: uppercase;
-    }
-
-    @include minidesk {
-        order: 1;
-        padding-top: 15px;
-
-    }
 }
 
 .footer_wrapper {
@@ -470,6 +514,24 @@ input[type=number] {
         padding: 15px 0;
     }
 }
+
+.copyright {
+    @include minidesk {
+        order: 1;
+        padding-top: 15px;
+        margin: 0 60px;
+    }
+    color: #fff;
+    margin-right: 50px;
+
+    &__uppercase {
+        text-transform: uppercase;
+    }
+
+  
+}
+
+
 
 .pay_systems {
     display: flex;
@@ -514,6 +576,9 @@ input[type=number] {
         margin-left: 40px;
         background-repeat: no-repeat;
         background-position: left;
+            @include minidesk {
+                margin-left: 15px;
+        }
 
         &__mail {
             background-image: url("../images/mail-icon.svg");
